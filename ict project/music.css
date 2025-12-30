@@ -1,0 +1,108 @@
+/* --- MUSIC PAGE SPECIFIC STYLES --- */
+
+.section-intro {
+    font-size: 1.1rem;
+    color: #bbb;
+    max-width: 800px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+/* 4-TILE GRID SETUP */
+.music-grid {
+    display: grid;
+    /* Forces 4 columns on large screens, scales down on tablets/phones */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* THE CLICKABLE CARD */
+.music-card {
+    text-decoration: none; /* Removes link underline */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.music-card:hover {
+    transform: translateY(-10px);
+}
+
+/* IMAGE WRAPPER (Keeps covers square) */
+.album-art-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Ensures a perfect square */
+    border-radius: 12px;
+    overflow: hidden;
+    background: #111;
+    border: 1px solid #222;
+    margin-bottom: 15px;
+}
+
+.album-art-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 0.4s ease, transform 0.6s ease;
+}
+
+/* PLAY BUTTON OVERLAY (Shows on Hover) */
+.play-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(255, 51, 51, 0.4); /* Transparent Sharsky Red */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.5rem;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.music-card:hover .play-overlay {
+    opacity: 1;
+}
+
+.music-card:hover img {
+    filter: brightness(0.5) blur(2px);
+    transform: scale(1.1);
+}
+
+/* TYPOGRAPHY FOR SONG INFO */
+.song-title {
+    margin: 0;
+    color: #ff3333; /* Brand Red */
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.release-info {
+    margin-top: 5px;
+    font-size: 0.85rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.music-card:hover .song-title {
+    color: #ffffff; /* Turns white on hover for extra feedback */
+}
+
+/* RESPONSIVE TWEAKS */
+@media (max-width: 600px) {
+    .music-grid {
+        grid-template-columns: 1fr 1fr; /* 2 columns on small mobile */
+        gap: 15px;
+    }
+    
+    .song-title {
+        font-size: 1rem;
+    }
+}

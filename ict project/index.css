@@ -1,0 +1,111 @@
+/* SPLIT LAYOUT LOGIC */
+.hero-split {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-top: 20px;
+    width: 100%; /* Ensure it uses full container width */
+}
+
+.hero-text {
+    flex: 1; /* Takes up 50% */
+    max-width: 800px;
+}
+
+.hero-text p {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    text-align: justify; /* This makes the text look more like a solid block */
+    color: #e2e2e2;
+}
+
+.hero-text strong {
+    color: #ff3333;
+}
+
+/* CAROUSEL ON THE RIGHT - NOW EQUAL SIZE */
+.carousel-wrapper {
+    flex: 1; /* Takes up 50% */
+    position: relative;
+    margin-left: 200px;
+    margin-right: 50px;
+    width: 100%; /* Allow it to grow to fill its flex half */
+    max-width: 700px; /* Removed the 450px restriction to keep it equal */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 0px 30px rgba(255, 0, 0, 0.2);
+}
+
+/* Ensure images fill the equalized space */
+.slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+/* ... keep the rest of your carousel logic (dots, sliding, etc.) as is ... */
+
+/* HIDE DEFAULT RADIO DOTS AT TOP */
+input[type="radio"][name="carousel"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* CAROUSEL SLIDING LOGIC */
+.carousel-images {
+    display: flex;
+    width: 300%;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide { width: 33.33%; }
+.slide img { width: 100%; display: block; border-radius: 10px; }
+
+#slide1:checked ~ .carousel-images { transform: translateX(0%); }
+#slide2:checked ~ .carousel-images { transform: translateX(-33.33%); }
+#slide3:checked ~ .carousel-images { transform: translateX(-66.66%); }
+
+/* STYLE THE DOTS AT THE BOTTOM */
+.carousel-dots {
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    text-align: center;
+}
+
+.carousel-dots label {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#slide1:checked ~ .carousel-dots label:nth-child(1),
+#slide2:checked ~ .carousel-dots label:nth-child(2),
+#slide3:checked ~ .carousel-dots label:nth-child(3) {
+    background: #ff3333;
+}
+
+/* MOBILE RESPONSIVENESS: STACK THEM */
+@media (max-width: 800px) {
+    .hero-split {
+        flex-direction: column-reverse; /* Carousel goes on top for mobile */
+    }
+}
+
+/* Home page: move About heading lower, make it bigger and red */
+#home-page .section-title {
+    margin-top: 0;
+    font-size: 3.6rem; /* increased size */
+    color: #ff3333;
+    font-weight: 700;
+    transform: translateY(110px); /* push the title down so its top aligns with the carousel */
+    line-height: 1;
+}

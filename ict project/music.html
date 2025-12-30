@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharsky | Music</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="music.css">
+</head>
+<body id="music-page" class="preload">
+
+    <input type="checkbox" id="nav-toggle" checked>
+    <label for="nav-toggle" id="toggle-btn">☰</label>
+
+    <header>
+         <h1>SHARSKY</h1> 
+         <h5>Rap Artist & Producer</h5>
+    </header>
+
+    <nav id="sidebar">
+        <a href="index.html" id="nav-about">About</a>
+        <a href="skills.html" id="nav-skills">Skills</a>
+        <a href="music.html" id="nav-music">Music</a>
+        <a href="contact.html" id="nav-contact">Contact</a>
+    </nav>
+
+    <div class="container">
+        <h2 class="section-title">Featured Music</h2>
+        <p class="section-intro">
+            Some of my best works, available on Spotify
+        </p>
+        
+        <div class="music-grid">
+            <a href="YOUR_LINK_HERE" target="_blank" class="music-card">
+                <div class="album-art-wrapper">
+                    <img src="Album covers/take a look cover m2.jpg" alt="Take a Look cover art">
+                    <div class="play-overlay">▶</div>
+                </div>
+                <h3 class="song-title">Take a Look</h3>
+                <span class="release-info">Single | 2025</span>
+            </a>
+
+            <a href="YOUR_LINK_HERE" target="_blank" class="music-card">
+                <div class="album-art-wrapper">
+                    <img src="Album covers/comp0006.jpg" alt="SFAP album cover">
+                    <div class="play-overlay">▶</div>
+                </div>
+                <h3 class="song-title">One King</h3>
+                <span class="release-info">Stories From a Poet | 2025</span>
+            </a>
+
+            <a href="YOUR_LINK_HERE" target="_blank" class="music-card">
+                <div class="album-art-wrapper">
+                    <img src="Album covers/flower frame m1.jpg" alt="God's Son cover art">
+                    <div class="play-overlay">▶</div>
+                </div>
+                <h3 class="song-title">God's Son</h3>
+                <span class="release-info">Single | 2024</span>
+            </a>
+
+            <a href="YOUR_LINK_HERE" target="_blank" class="music-card">
+                <div class="album-art-wrapper">
+                    <img src="Album covers/comp0006.jpg" alt="SFAP album cover">
+                    <div class="play-overlay">▶</div>
+                </div>
+                <h3 class="song-title">False Idols</h3>
+                <span class="release-info">Stories From a Poet | 2025</span>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener("load", () => {
+            setTimeout(() => document.body.classList.remove("preload"), 100);
+        });
+    </script>
+</body>
+</html>

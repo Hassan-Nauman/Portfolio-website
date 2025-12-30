@@ -1,0 +1,88 @@
+/* GLOBAL THEME */
+body {
+    font-family: Arial, sans-serif;
+    background: #0a0a0a;
+    color: #e2e2e2;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #121212;
+    padding: 30px;
+    text-align: center;
+    border-bottom: 3px solid #b30000;
+}
+
+header h1 { margin: 0; font-size: 2.8rem; color: #ff3333; }
+header h5 { margin: 0; font-size: 0.75rem; color: #d48888; letter-spacing: 1.5px; }
+
+/* SIDEBAR & TOGGLE LOGIC */
+#nav-toggle { display: none; }
+
+#sidebar {
+    width: 230px;
+    background: #121212;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    padding-top: 120px;
+    border-right: 3px solid #b30000;
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+#sidebar a {
+    display: block;
+    color: #ff4d4d;
+    padding: 15px 25px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Active State via Body ID */
+#home-page #nav-about, #skills-page #nav-skills, 
+#music-page #nav-music, #contact-page #nav-contact {
+    background: #b30000;
+    color: white;
+}
+
+/* --- GLOBAL HAMBURGER BUTTON --- */
+#toggle-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    
+    /* Ensures button stays above the sidebar */
+    z-index: 9999; 
+    
+    font-size: 30px;
+    cursor: pointer;
+    color: #ff3333; /* Brand red */
+    
+    /* Fade out to 50% when not hovered */
+    opacity: 0.5;
+    
+    /* Smooth transition for manual hover only */
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover State: Full brightness and glow */
+#toggle-btn:hover {
+    opacity: 1;
+    transform: scale(1.1);
+    text-shadow: 0 0 15px rgba(255, 51, 51, 0.8);
+}
+.container {
+    padding: 40px;
+    padding-left: 260px;
+    transition: padding-left 0.3s ease;
+}
+
+/* Collapsed States */
+#nav-toggle:checked ~ #sidebar { transform: translateX(-230px); }
+#nav-toggle:checked ~ .container { padding-left: 40px; }
+
+/* Preload Fix */
+.preload * { transition: none !important; }
