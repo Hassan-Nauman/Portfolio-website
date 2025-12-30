@@ -1,14 +1,10 @@
-/* --- CONTACT PAGE GLOBAL LAYOUT --- */
-
 .contact-wrapper {
     display: flex;
     gap: 30px;
     margin-top: 40px;
-    align-items: stretch; /* Keeps both cards the same height */
+    align-items: stretch;
     flex-wrap: wrap;
 }
-
-/* BASE CARD STYLING */
 .contact-card, 
 .services-card {
     flex: 1;
@@ -22,7 +18,7 @@
     flex-direction: column;
 }
 
-/* --- VERTICAL CENTERING --- */
+
 .contact-card {
     justify-content: center; 
     text-align: center;
@@ -43,7 +39,7 @@
     gap: 40px;
 }
 
-/* --- HORIZONTAL EMAIL LAYOUT --- */
+
 .method {
     display: flex;
     flex-direction: column;
@@ -54,7 +50,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px; /* Pushes email and button apart horizontally */
+    gap: 20px;
     margin-top: 10px;
 }
 
@@ -72,7 +68,7 @@
     font-weight: 500;
 }
 
-/* --- ACTION BUTTON --- */
+
 .action-btn {
     display: inline-block;
     padding: 8px 15px;
@@ -106,7 +102,7 @@
     text-decoration: underline;
 }
 
-/* --- SERVICES CARD --- */
+
 .services-card h3 {
     color: #ff3333;
     font-size: 1.5rem;
@@ -145,7 +141,7 @@
     font-style: italic;
 }
 
-/* --- FOOTER FIX --- */
+
 footer {
     width: 100%;
     text-align: center;
@@ -155,7 +151,6 @@ footer {
     clear: both;
 }
 
-/* --- RESPONSIVE MOBILE TWEAK --- */
 @media (max-width: 850px) {
     .contact-wrapper { flex-direction: column; }
     .email-row { flex-direction: column; gap: 15px; }

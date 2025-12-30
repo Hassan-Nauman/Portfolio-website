@@ -17,7 +17,7 @@ header {
 header h1 { margin: 0; font-size: 2.8rem; color: #ff3333; }
 header h5 { margin: 0; font-size: 0.75rem; color: #d48888; letter-spacing: 1.5px; }
 
-/* SIDEBAR & TOGGLE LOGIC */
+
 #nav-toggle { display: none; }
 
 #sidebar {
@@ -41,34 +41,34 @@ header h5 { margin: 0; font-size: 0.75rem; color: #d48888; letter-spacing: 1.5px
     font-weight: bold;
 }
 
-/* Active State via Body ID */
+
 #home-page #nav-about, #skills-page #nav-skills, 
 #music-page #nav-music, #contact-page #nav-contact {
     background: #b30000;
     color: white;
 }
 
-/* --- GLOBAL HAMBURGER BUTTON --- */
+
 #toggle-btn {
     position: fixed;
     top: 20px;
     left: 20px;
     
-    /* Ensures button stays above the sidebar */
+
     z-index: 9999; 
     
     font-size: 30px;
     cursor: pointer;
-    color: #ff3333; /* Brand red */
+    color: #ff3333;
     
-    /* Fade out to 50% when not hovered */
+
     opacity: 0.5;
     
-    /* Smooth transition for manual hover only */
+
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Hover State: Full brightness and glow */
+
 #toggle-btn:hover {
     opacity: 1;
     transform: scale(1.1);
@@ -80,9 +80,9 @@ header h5 { margin: 0; font-size: 0.75rem; color: #d48888; letter-spacing: 1.5px
     transition: padding-left 0.3s ease;
 }
 
-/* Collapsed States */
+
 #nav-toggle:checked ~ #sidebar { transform: translateX(-230px); }
 #nav-toggle:checked ~ .container { padding-left: 40px; }
 
-/* Preload Fix */
+
 .preload * { transition: none !important; }

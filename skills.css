@@ -1,9 +1,9 @@
 :root {
-    /* --- GLOBAL CONTROLS --- */
-    --logo-width: 75px;      /* Width of all logos */
-    --logo-gap: 150px;        /* CONTROL FOR SPACING BETWEEN LOGOS */
-    --side-opacity: 0.3;     /* Opacity for the 6 side logos */
-    --container-height: 70px; /* Fixed vertical space for logos to sit in */
+
+    --logo-width: 75px;
+    --logo-gap: 150px;
+    --side-opacity: 0.3;    
+    --container-height: 70px; 
 }
 
 .skills-grid {
@@ -56,7 +56,7 @@
     padding-bottom: 5px;
 }
 
-/* Make anchor-wrapped skill cards behave like cards (no link styling) */
+
 .skill-card {
     display: block;
     text-decoration: none;
@@ -72,8 +72,8 @@
 .software-row {
     display: flex;
     justify-content: center;
-    align-items: flex-end; /* Aligns the logo containers to the bottom */
-    gap: var(--logo-gap);  /* Uses your global spacing controller */
+    align-items: flex-end;
+    gap: var(--logo-gap);
     background: #111;
     padding: 40px;
     border-radius: 15px;
@@ -89,11 +89,11 @@
     transition: transform 0.2s ease;
 }
 
-/* This container ensures the labels are all pushed to the same starting height */
+
 .logo-container {
     height: var(--container-height);
     display: flex;
-    align-items: center;    /* Centers logos vertically within that height */
+    align-items: center;
     justify-content: center;
 }
 
@@ -103,21 +103,21 @@
     display: block;
 }
 
-/* Opacity Logic */
+
 .side-logo img { opacity: var(--side-opacity); }
 .middle-logo img { opacity: 1; transform: scale(1.1); }
 
-/* Simple hover */
+
 .software-item:hover { 
     transform: translateY(-3px);
 }
 
-/* The Labels - Now perfectly aligned */
+
 .software-item span {
     margin-top: 15px;
     font-size: 0.7rem;
     color: #888;
     text-transform: uppercase;
     letter-spacing: 1px;
-    white-space: nowrap; /* Prevents text from breaking into two lines */
+    white-space: nowrap;
 }
