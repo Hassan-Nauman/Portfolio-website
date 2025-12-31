@@ -1,4 +1,10 @@
 /* GLOBAL THEME */
+:root {
+    /* padding controller */
+    --logo-padding: 10px;
+    /* scale controller */
+    --logo-scale: 1;
+}
 body {
     font-family: Arial, sans-serif;
     background: #0a0a0a;
@@ -10,8 +16,24 @@ body {
 header {
     background: #121212;
     padding: 30px;
-    text-align: center;
     border-bottom: 3px solid #b30000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+    padding: var(--logo-padding);
+    transform: scale(var(--logo-scale));
 }
 
 header h1 { margin: 0; font-size: 2.8rem; color: #ff3333; }
