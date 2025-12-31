@@ -2,7 +2,7 @@
 .hero-split {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 150px;
     margin-top: 20px;
     width: 100%;
 }
